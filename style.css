@@ -1,0 +1,256 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', monospace;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    margin-left: 60px;
+    font-size: 16px;
+    font-weight: 200;
+    border-bottom: 2px solid transparent; /* subrayado transp */
+    transition: all .5s ease 0s; /* transicionan las a */
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid purple;
+}
+
+#menuIcon {
+    display: none;
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer;
+}
+
+#menuToggle {
+    display: none;
+}
+
+.menuIconAction {
+    display: none;
+}
+
+.principal {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: lightgray;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+section {
+    padding:0 8%;
+}
+
+.principalImg img {
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 6s linear;
+}
+
+.principalImg img:hover {
+    width: 450px;
+    opacity: 0.6;
+}
+
+.principalText h2 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.principalText h1 {
+    font-family: 'Major', monospace;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.principalText p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.principalText a{
+    display: inline-block;
+    background-color: gray;
+    border: 1px solid transparent;
+    padding: 14px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.principalText a:hover {
+    background-color: transparent;
+    border: 1px solid purple;
+    transform: translateX(6px);
+}
+
+.principalText a.imagenes {
+    background-color: transparent;
+    border: 1px solid purple;
+    margin-left: 20px;
+}
+
+.principalText a i{
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin:  25px 0;
+    font-size: 25px;
+    transition: all .5s ease;
+}
+
+.icons i:hover {
+    color: grey;
+    transform: translateY(-5px);
+}
+
+.scroll {
+    position: absolute;
+    bottom: 8%;
+    right: 4%;
+}
+
+.scroll i {
+    display: block;
+    padding: 12px;
+    font-size: 38px;
+    background-color: grey;
+    border-radius: 30px;
+    align-items: center;
+    transition: all .5s ease;
+}
+
+.scroll i:hover {
+    transform: translateY(-5px);
+}
+
+
+/* pagina responsive */
+@media (max-width:992px) {
+    section {
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .principalText {
+        padding-top: 0;
+    }
+
+    .principalImg {
+        text-align: center;
+    }
+
+    .principalImg img {
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .principalText p {
+        font-size: 60%;
+    }
+
+    .scroll {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .menuIconAction {
+        display: block;
+    }
+
+    #menuIcon {
+        display: block;
+    }
+
+    .principalText {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .principalImg img {
+        margin: 0;
+    }
+
+    .principal {
+        height: 100%;
+        gap: 1rem;
+        grid-template-rows: 1fr;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all 1s ease;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menuToggle:checked + label.menuIconAction + ul {
+        right: 0;
+    }
+}
